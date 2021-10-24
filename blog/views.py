@@ -58,7 +58,6 @@ def post_detail(request, year, month, day, post):
             new_comment = comment_form.save(commit=False)
             new_comment.post = post
             new_comment.save()
-            return redirect(reverse_lazy('blog:post_list'))
 
     else:
         comment_form = CommentForm()
