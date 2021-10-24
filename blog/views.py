@@ -11,6 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 class PostListView(ListView):
+    """class view all posts in blog"""
     queryset = Post.published.all()
     context_object_name = 'posts'
     paginate_by = 2
@@ -18,6 +19,7 @@ class PostListView(ListView):
 
 
 def post_list(request, tag_slug=None):
+    
     object_list = Post.published.all()
     tag = None
     if tag_slug:
